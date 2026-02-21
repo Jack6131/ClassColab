@@ -20,5 +20,12 @@
 
 ## Questions
     Quote From Paper 
-    `Assumptions The security of NodeShield is predicated on thefollowing assumptions on JavaScript, Node.js, and the vm module.First, dynamic code evaluation in JavaScript is limited to accessingonly variables from the current scope—per the language specifica-tion [18]. Second, the only three ways to load modules in Node.js arethe require function (in CommonJS), the import syntax (in ESMod-ules), and the import function (both)—per the Node.js docs [ 20 ].Third, we assume the vm module 1) traps all uses of both the importsyntax and function, 2) prevents use of dynamic code evaluationAPIs and 3) provides a fresh JavaScript context without Node.js-specific built-ins or implicit access to variables from the contextin which it is instantiated—the former two are supported by theNode.js docs [20] while we empirically validate the latter.`
+    ```
+    Assumptions The security of NodeShield is predicated on thefollowing assumptions on JavaScript, Node.js, and the vm module.First, dynamic code
+    evaluation in JavaScript is limited to accessingonly variables from the current scope—per the language specifica-tion [18]. Second, the only
+    three ways to load modules in Node.js arethe require function (in CommonJS), the import syntax (in ESMod-ules), and the import function (both)
+    —per the Node.js docs [ 20 ].Third, we assume the vm module 1) traps all uses of both the importsyntax and function, 2) prevents use of dynamic
+    code evaluationAPIs and 3) provides a fresh JavaScript context without Node.js-specific built-ins or implicit access to variables from the
+    contextin which it is instantiated—the former two are supported by theNode.js docs [20] while we empirically validate the latter.
+    ```
     - It seems like the assumptions are a problem that another paper seems to answer which is the enforcing build steps to only access certain files and directories. I wonder if using this as an enforcment would allow for a more secure system for building code.
